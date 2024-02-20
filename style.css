@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+header {
+    background-image: url('./images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-container {
+    transform-style: preserve-3d;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front-side {
+    background-image: url('/images/bg-card-front.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: hidden;
+}
+
+.back-side {
+    background-image: url('/images/bg-card-back.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+main {
+    color: hsl(278, 68%, 11%);
+}
+
+input {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    border: 1px solid hsl(279, 6%, 55%);
+    border-radius: 5px;
+    outline: none;
+    color: hsl(278, 68%, 11%);
+    &:focus {
+        border: 1px solid hsl(278, 68%, 11%) !important;
+        color: hsl(278, 68%, 11%) !important;
+    }
+}
+
+form p {
+    visibility: hidden;
+    color: hsl(0, 100%, 66%);
+}
+
+input::placeholder {
+    color: hsl(279, 6%, 55%);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+button {
+    background: hsl(278, 68%, 11%);
+    color: hsl(270, 3%, 87%);
+}
+
+.error {
+    input {
+        border: 1px solid hsl(0, 100%, 66%);
+        color: hsl(0, 100%, 66%);
+    }
+    p {
+        visibility: visible;
+        color: hsl(0, 100%, 66%);
+    }
+}
+
+@media screen and (min-width: 640px) {
+    header {
+        background-image: url('./images/bg-main-desktop.png');
+    }
+}
